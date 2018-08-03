@@ -1,0 +1,30 @@
+<%= stylesheet_link_tag "todo_lists" %>
+<%= stylesheet_link_tag "app" %>
+<% @todo_lists.each do |todo_list| %>
+<div class="index_row clearfix">
+  <div class="col-md-3"><span class="todo_list_sub_title"><%= todo_list.title %></span></div>
+  <div class="col-md-5"><span class="todo_list_sub_title"><%= todo_list.description %></span></div>
+   <div class="col-md-1">
+	<%= link_to todo_list, title:"View" do %>
+    	<i class="fa fa-eye fontAwe" aria-hidden="true"></i>
+    <% end %>
+   	</div>
+   <div class="col-md-1">
+    <%= link_to edit_todo_list_path(todo_list), title:"Edit" do %>
+    	<i class="fa fa-pencil-square-o fontAwe" aria-hidden="true"></i>
+    <% end %>
+   	</div>
+   <div class="col-md-1">
+   	<%= link_to todo_list, method: :delete, data: { confirm: 'Are you sure?' }, title:"Delete" do %>
+    	<i class="fa fa-trash fontAwe" aria-hidden="true"></i>
+    <% end %>
+   	</div>
+</div>
+<% end %>
+<br />
+<div style="margin-left: 40px">
+<%= button_to "Create To do List", new_todo_list_path, method: :get, class:"createBtn" %></div>
+<div id='post-content'></div>
+
+
+

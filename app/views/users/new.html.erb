@@ -1,0 +1,31 @@
+<%= stylesheet_link_tag "users" %>
+<div class="container">
+  <div class="row main">
+    <div class="panel-heading">
+      <div class="panel-title text-center">
+        <h3 class="title">Sign Up</h3>
+      </div>
+  </div> 
+  <div class="main-login main-center">
+    <%= form_for @user do |f| %>
+      <% if @user.errors.any? %>
+            <div class ="alert alert-danger">
+              <% for message in @user.errors.full_messages %>
+                <li><%=message%></li>
+              <% end %>
+            </div>
+      <% end %>
+      <p>
+        <%= f.text_field :email, placeholder: "Email" %>
+      </p>
+      <p>
+        <%= f.password_field :password, placeholder: "Password"  %>
+      </p>
+      <p>
+        <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+      </p>
+      <p class="submit-btn"><%= f.submit:Submit, class: 'btn btn-primary' %></p>
+      <div class="signLink"><%= link_to "Already have an account? Login In", log_in_path %> </div>
+    <% end %>
+  </div>
+</div>

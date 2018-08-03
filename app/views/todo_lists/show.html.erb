@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag "app" %>
+<%= stylesheet_link_tag "todo_lists" %>
+<div style="margin-left: 20px">
+	<p id="notice"><%= notice %></p>
+
+	<h3>
+	  <%= @todo_list.title %>
+	</h3>
+
+	<p style="font-size:15px;">
+	  <b>Description:</b>
+	  <%= @todo_list.description %>
+	</p>
+
+	<div id="todo_items_wrapper">
+	 <table>
+	 	<%= render @todo_list.todo_items %>
+	</table>
+	 <div id="form">
+	  <%= render "todo_items/form" %>
+	 </div>
+	</div>
+	<%= button_to "Edit", edit_todo_list_path(@todo_list), class:"btn btn-primary btn", method: :get, form: {style: 'display:inline-block;'} %>
+	<%= button_to "Back", todo_lists_path, class:"btn btn-primary btn", method: :get, form: {style: 'display:inline-block;float:right;margin-right:32px;'} %>
+</div>
