@@ -1,4 +1,5 @@
 class TodoItemsController < ApplicationController
+	before_filter :is_signed_in?
 	before_filter :set_todo_list
 
 	def create

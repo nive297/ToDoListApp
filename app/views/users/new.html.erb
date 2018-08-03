@@ -9,7 +9,7 @@
   <div class="main-login main-center">
     <%= form_for @user do |f| %>
       <% if @user.errors.any? %>
-            <div class ="alert alert-danger">
+            <div class ="alert alert-info">
               <% for message in @user.errors.full_messages %>
                 <li><%=message%></li>
               <% end %>
