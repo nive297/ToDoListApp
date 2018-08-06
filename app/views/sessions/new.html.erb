@@ -9,7 +9,7 @@
 <div class="main-login main-center">
 	<%= form_tag sessions_path do %>
 	  <% flash.each do |name, msg| %>
-    	<%= content_tag :div, msg, class: "alert alert-danger" %>
+    	<%= content_tag :div, msg, class: "alert alert-info" %>
   	  <% end %>
 	  <p>
 	    <%= text_field_tag :email, params[:email], placeholder: "Email"  %>

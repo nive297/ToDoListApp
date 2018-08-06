@@ -1,7 +1,6 @@
 class TodoListsController < ApplicationController
   # GET /todo_lists
   # GET /todo_lists.json
-  before_filter :is_signed_in?
   before_filter :current_user 
   def index
     @todo_lists = TodoList.where('users_id = ?',current_user.id )
